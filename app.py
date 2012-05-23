@@ -16,7 +16,7 @@ manager.sync(app)
 
 @app.route('/device_comm/order')
 def order():
-	#  Dish, Special Instructions, User (email)
+	return "order food"
 
 @app.route('/create')
 def create():
