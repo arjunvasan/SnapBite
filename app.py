@@ -11,7 +11,8 @@ app.config["COUCHDB_DATABASE"] = "restaurants"
 
 from flaskext import *
 
-manager = CouchDBManager()
+
+manager = couchdb.CouchDBManager()
 # ...add document types and view definitions...
 manager.setup(app)
 
