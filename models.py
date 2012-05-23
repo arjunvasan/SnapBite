@@ -12,4 +12,5 @@ class Order(Document):
 	dish = TextField()
 	special = TextField()
 	table = IntegerField()
+	placed = DateTimeField()
 	

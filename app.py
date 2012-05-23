@@ -22,7 +22,12 @@ def alert():
 
 @app.route('/device_comm/order')
 def order():
-	post = Order(dish='Saag Paneer', special='Extra Spicy', table=4)
+	post = Order(
+		dish=request.args.get("dish"), 
+		special=request.args.get("special"), 
+		table=int(request.args.get("table"))
+	)
+	
 	post.store()
 	return "order food"
 	
