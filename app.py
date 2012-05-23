@@ -4,9 +4,11 @@ from flask import Flask, request, session, g, redirect, url_for, \
 
 app = Flask(__name__)
 app.config["COUCHDB_SERVER"] = "https://app4790148.heroku:WgINDWRcjikDuH4K1bH7wFPg@app4790148.heroku.cloudant.com"
-app.config["COUCHDB_DATABASE"] = "restaurants"
+app.config["COUCHDB_DATABASE"] = "snapbite"
 
 from flaskext.couchdb import *
+
+from models import *
 
 
 manager = CouchDBManager(auto_sync=False)
@@ -20,24 +22,25 @@ def alert():
 
 @app.route('/device_comm/order')
 def order():
-	order = {
-		"dish":"Saag Paneer",
-		"special":"Extra Spicy",
-		"table":4
-	}
-	g.couch["order_1"] = order
+	post = Order(dish='Saag Paneer', special='Extra Spicy', table=4)
+	post.store()
 	return "order food"
-
+	
 @app.route('/device_comm/checkout')
 def checkout():
 	# [orders], cc_info, table
 	return "checkout"
 
+
+blah = """
 @app.route('/create')
 def create():
-	document = dict(title="Jantas Restaurant", content="Hello, world!")
+	document = {
+		"doc":"wef"
+	}
 	g.couch["jantas"] = document
 	return 'Hello World!'
+"""
 
 if __name__ == '__main__':
 	port = int(os.environ.get('PORT', 5000))
