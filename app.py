@@ -23,6 +23,7 @@ def hello():
     return 'Hello World!'
     
 @app.route('/get')
+def get():
     document = g.couch.get("Janta's") 
     print document
 
