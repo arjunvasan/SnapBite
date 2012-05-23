@@ -14,9 +14,26 @@ manager = CouchDBManager(auto_sync=False)
 manager.setup(app)
 manager.sync(app)
 
+@app.route('/device_comm/alert')
+def alert():
+	# table #, instructions
+	return "call waiter"
+
 @app.route('/device_comm/order')
 def order():
+	# dish, instructions, table
+	order = {
+		"dish":"Saag Paneer",
+		"special":"Extra Spicy",
+		"table":4
+	}
+	g.couch["jantas"] = order
 	return "order food"
+	
+@app.route('/device_comm/checkout')
+def checkout():
+	# [orders], cc_info, table
+	return "checkout"
 
 @app.route('/create')
 def create():
