@@ -16,7 +16,7 @@ manager.setup(app)
 @app.route('/')
 def hello():
 	document = dict(title="Jantas Restaurant", content="Hello, world!")
-	g.couch["Janta's"] = document
+	g.couch["jantas"] = document
 	return 'Hello World!'
 
 if __name__ == '__main__':
