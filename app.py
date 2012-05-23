@@ -21,6 +21,10 @@ def hello():
     document = dict(title="Jantas Restaurant", content="Hello, world!")
     g.couch["Janta's"] = document
     return 'Hello World!'
+    
+@app.route('/get')
+    document = g.couch.get("Janta's") 
+    print document
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
