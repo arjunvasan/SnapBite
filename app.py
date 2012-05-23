@@ -14,6 +14,10 @@ manager = CouchDBManager(auto_sync=False)
 manager.setup(app)
 manager.sync(app)
 
+@app.route('/device_comm/order')
+def order():
+	#  Dish, Special Instructions, User (email)
+
 @app.route('/create')
 def create():
 	document = dict(title="Jantas Restaurant", content="Hello, world!")
