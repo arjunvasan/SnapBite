@@ -1,0 +1,2 @@
+Flask
+CouchDB>=0.7
