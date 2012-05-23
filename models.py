@@ -1,4 +1,4 @@
-from flaskext.couchdb import Document
+from flaskext.couchdb import *
 class Restaurant(Document):
 	doc_type = 'restaurant'
 	name = TextField()
