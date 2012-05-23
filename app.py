@@ -14,10 +14,10 @@ manager = CouchDBManager(auto_sync=False)
 manager.setup(app)
 manager.sync(app)
 
-@app.route('/')
-def hello():
+@app.route('/create')
+def create():
 	document = dict(title="Jantas Restaurant", content="Hello, world!")
-	manager.add_document(document)
+	g.couch["jantas"] = document
 	return 'Hello World!'
 
 if __name__ == '__main__':
