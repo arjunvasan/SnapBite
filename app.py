@@ -21,7 +21,7 @@ def hello():
 	document = dict(title="Jantas Restaurant", content="Hello, world!")
 	g.couch["Janta's"] = document
 	return 'Hello World!'
-
+	
 @app.route('/get')
 def get():
 	document = g.couch.get("Janta's") 
