@@ -6,3 +6,4 @@ wsgiref==0.1.2
 gunicorn==0.13.4
 couchdb
 Flask-CouchDB
+twisted

@@ -1,4 +1,5 @@
 # all the imports
+import httplib2
 from flask import Flask, request, session, g, redirect, url_for, \
      abort, render_template, flash
 
@@ -20,7 +21,7 @@ manager.sync(app)
 def alert():
 	return "call waiter"
 
-@app.route('/device_comm/order')
+@app.route('/device_comm/order', methods=['POST','GET'])
 def order():
 	post = Order(
 		dish=request.args.get("dish"), 
@@ -29,7 +30,11 @@ def order():
 	)
 	
 	post.store()
+	
+	
 	return "order food"
+	
+
 	
 @app.route('/device_comm/checkout')
 def checkout():
