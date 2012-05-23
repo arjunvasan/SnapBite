@@ -25,7 +25,7 @@ def order():
 		"special":"Extra Spicy",
 		"table":4
 	}
-	g.couch["jantas"] = order
+	g.couch["order_1"] = order
 	return "order food"
 
 @app.route('/device_comm/checkout')
