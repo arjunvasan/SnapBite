@@ -16,12 +16,10 @@ manager.sync(app)
 
 @app.route('/device_comm/alert')
 def alert():
-	# table #, instructions
 	return "call waiter"
 
 @app.route('/device_comm/order')
 def order():
-	# dish, instructions, table
 	order = {
 		"dish":"Saag Paneer",
 		"special":"Extra Spicy",
@@ -29,7 +27,7 @@ def order():
 	}
 	g.couch["jantas"] = order
 	return "order food"
-	
+
 @app.route('/device_comm/checkout')
 def checkout():
 	# [orders], cc_info, table
