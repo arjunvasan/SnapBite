@@ -119,12 +119,12 @@ def checkout():
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
     if request.method == 'POST':
-        """post = Restaurant(
+        post = Restaurant(
             name = request.form['name'],
             description = request.form['description'],
             location = request.form['location']
-        )"""
-        #post.store()
+        )
+        post.store()
         # flash('Your restaurant has been entered into our database.')
         return 'hello'
     else:
