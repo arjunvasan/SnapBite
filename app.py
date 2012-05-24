@@ -121,7 +121,7 @@ def checkout():
 def signup():
     if request.method == 'POST':
         post = Restaurant(
-            id = request.form['name'] #makes it easier to read in database
+            id = request.form['name'], #makes it easier to read in database
             name = request.form['name'],
             description = request.form['description'],
             location = request.form['location']
