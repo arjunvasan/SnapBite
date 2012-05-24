@@ -124,7 +124,7 @@ def signup():
             description = request.form['description'],
             location = request.form['location']
         )
-        post.store()
+        #post.store()
         # flash('Your restaurant has been entered into our database.')
     return render_template('signup.html')
 
