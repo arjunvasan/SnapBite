@@ -126,7 +126,7 @@ def signup():
         )"""
         #post.store()
         # flash('Your restaurant has been entered into our database.')
-        print 'hello'
+        return 'hello'
     else:
         return render_template('signup.html')
 
