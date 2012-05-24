@@ -100,6 +100,7 @@ def alert():
 @app.route('/device_comm/order', methods=['POST','GET'])
 def order():
 	post = Order(
+	    id = request.args.get("dish")
 		dish=request.args.get("dish"), 
 		special=request.args.get("special"), 
 		table=int(request.args.get("table"))
@@ -120,6 +121,7 @@ def checkout():
 def signup():
     if request.method == 'POST':
         post = Restaurant(
+            id = request.form['name'] #makes it easier to read in database
             name = request.form['name'],
             description = request.form['description'],
             location = request.form['location']

@@ -13,4 +13,9 @@ class Order(Document):
 	special = TextField()
 	table = IntegerField()
 	placed = DateTimeField()
-	
+
+class Dishes(Document):
+    doc_type = 'dishes'
+    restaurant = TextField()
+    dishes = ListField(TextField())
+    
