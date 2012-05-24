@@ -1,7 +1,7 @@
 from flaskext.couchdb import *
 class Restaurant(Document):
 	doc_type = 'restaurant'
-	person = TextField()
+	name = TextField()
 	description = TextField()
 	tags = ListField(TextField())
 	location = TextField()
