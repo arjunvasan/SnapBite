@@ -120,13 +120,12 @@ def checkout():
 def signup():
     if request.method == 'POST':
         post = Restaurant(
-            name = 'pizza',
+            name = request.form['name'],
             description = 'asdf',
-            location = 'asdf'
+            location = 'redwood hood'
         )
         post.store()
-        # flash('Your restaurant has been entered into our database.')
-        return 'hello'
+        return 'You have signed up your restaurant!'
     else:
         return render_template('signup.html')
 
