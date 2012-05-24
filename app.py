@@ -115,7 +115,19 @@ def order():
 def checkout():
 	# [orders], cc_info, table
 	return "checkout"
-
+	
+@app.route('/signup', methods=['POST', 'GET'])
+def signup():
+    if request.method == 'POST':
+        post = Restaurant(
+        name = request.args.get("person")
+        restaurant = request.args.get("restaurant")
+        description = request.args.get("description")
+        location = request.args.get("location")
+        )
+        post.store()
+        flash('Your restaurant has been entered into our database.')
+    return render_template('signup.html')
 
 blah = """
 @app.route('/create')
