@@ -16,7 +16,7 @@ manager = CouchDBManager(auto_sync=False)
 manager.setup(app)
 manager.sync(app)
 
-
+'''
 from struct import pack
 from OpenSSL import SSL
 from twisted.internet import reactor
@@ -91,7 +91,7 @@ class APNSClientFactory(ClientFactory):
 
 	def clientConnectionFailed(self, connector, reason):
 		print "Connection failed. Reason: %s" % reason
-
+'''
 
 @app.route('/device_comm/alert')
 def alert():
