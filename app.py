@@ -121,7 +121,6 @@ def signup():
     if request.method == 'POST':
         post = Restaurant(
         person = request.args.get("person")
-        restaurant = request.args.get("restaurant")
         description = request.args.get("description")
         location = request.args.get("location")
         )
