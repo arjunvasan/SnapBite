@@ -134,7 +134,8 @@ def entermenudishes():
             #Add id field
             restaurant = request.form['restaurant'],
             name = request.form['name'],
-            price = request.form['price']
+            price = request.form['price'],
+            pictures = request.form['pictures']
         )
         post.store()
         return 'You have added your menu dishes to our database.'

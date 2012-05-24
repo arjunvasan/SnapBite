@@ -5,6 +5,7 @@ class Restaurant(Document):
 	description = TextField()
 	tags = ListField(TextField())
 	location = TextField()
+	dishes = ListField(TextField())
 
 class Order(Document):
 	doc_type = 'order'
@@ -19,5 +20,6 @@ class Dishes(Document):
     restaurant = TextField()
     name = TextField()
     price = FloatField()
+    pictures = ListField(TextField())
     
     
