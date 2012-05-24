@@ -120,7 +120,7 @@ def checkout():
 def signup():
     if request.method == 'POST':
         post = Restaurant(
-        name = request.args.get("person")
+        person = request.args.get("person")
         restaurant = request.args.get("restaurant")
         description = request.args.get("description")
         location = request.args.get("location")
