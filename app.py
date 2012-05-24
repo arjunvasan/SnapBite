@@ -121,8 +121,8 @@ def signup():
     if request.method == 'POST':
         post = Restaurant(
             name = request.form['name'],
-            description = 'asdf',
-            location = 'redwood hood'
+            description = request.form['description'],
+            location = request.form['location']
         )
         post.store()
         return 'You have signed up your restaurant!'
