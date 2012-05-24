@@ -100,7 +100,7 @@ def alert():
 @app.route('/device_comm/order', methods=['POST','GET'])
 def order():
 	post = Order(
-	    id = request.args.get("dish")
+	    id = request.args.get("dish"),
 		dish=request.args.get("dish"), 
 		special=request.args.get("special"), 
 		table=int(request.args.get("table"))
