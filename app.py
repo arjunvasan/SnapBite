@@ -126,7 +126,9 @@ def signup():
         )"""
         #post.store()
         # flash('Your restaurant has been entered into our database.')
-    return render_template('signup.html')
+        print 'hello'
+    else:
+        return render_template('signup.html')
 
 blah = """
 @app.route('/create')
