@@ -17,5 +17,7 @@ class Order(Document):
 class Dishes(Document):
     doc_type = 'dishes'
     restaurant = TextField()
-    dishes = ListField(TextField())
+    name = TextField()
+    price = FloatField()
+    
     

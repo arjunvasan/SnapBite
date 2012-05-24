@@ -100,17 +100,13 @@ def alert():
 @app.route('/device_comm/order', methods=['POST','GET'])
 def order():
 	post = Order(
-	    id = request.args.get("dish"),
+	    # Add id field if needed for vanity url
 		dish=request.args.get("dish"), 
 		special=request.args.get("special"), 
 		table=int(request.args.get("table"))
 	)
-	
 	post.store()
-	
 	return "order food"
-	
-
 	
 @app.route('/device_comm/checkout')
 def checkout():
@@ -121,7 +117,7 @@ def checkout():
 def signup():
     if request.method == 'POST':
         post = Restaurant(
-            id = request.form['name'], #makes it easier to read in database
+            # Add id field if needed for vanity url
             name = request.form['name'],
             description = request.form['description'],
             location = request.form['location']
@@ -131,15 +127,19 @@ def signup():
     else:
         return render_template('signup.html')
 
-blah = """
-@app.route('/create')
-def create():
-	document = {
-		"doc":"wef"
-	}
-	g.couch["jantas"] = document
-	return 'Hello World!'
-"""
+@app.route('/entermenudishes', methods=['POST', 'GET'])
+def entermenudishes():
+    if request.method== 'POST':
+        post = Dishes(
+            #Add id field
+            restaurant = request.form['restaurant'],
+            name = request.form['name'],
+            price = request.form['price']
+        )
+        post.store()
+        return 'You have added your menu dishes to our database.'
+    else:
+        return render_template('entermenudishes.html')
 
 if __name__ == '__main__':
 	port = int(os.environ.get('PORT', 5000))

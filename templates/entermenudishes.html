@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Menu Dishes</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+<form action="{{ url_for('entermenudishes') }}" method=POST enctype="multipart/form-data" class=add-entry >
+      <dl>
+        <dt>Restaurant:
+        <dd><input type=text size=30 name="restaurant" /> 
+        <dt>Dish name:
+        <dd><input type=text size=30 name="name" />
+		<dt>Price:
+		<dd><input type=text size=30 name="price">
+        <dd><input type=submit value=Submit />
+      </dl>
+    </form>
