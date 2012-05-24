@@ -2,8 +2,7 @@
 <title>Restaurant Sign Up</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 
-{% block body %}
-    <form action="http://snapbite.herokuapp.com/signup" method=POST class=add-entry>
+<form action="http://snapbite.herokuapp.com/signup" method=POST class=add-entry>
       <dl>
         <dt>Name:
         <dd><input type=text size=30 name="name" /> 
@@ -14,7 +13,3 @@
         <dd><input type=submit value=Submit />
       </dl>
     </form>
-  {% for message in get_flashed_messages() %}
-    <div class=flash>{{ message }}</div>
-  {% endfor %}
-{% endblock %}
