@@ -16,10 +16,16 @@ class Order(Document):
 	placed = DateTimeField()
 
 class Dishes(Document):
-    doc_type = 'dishes'
-    restaurant = TextField()
-    name = TextField()
-    price = FloatField()
-    pictures = ListField(TextField())
-    
+  doc_type = 'dishes'
+  restaurant = TextField()
+  name = TextField()
+  price = FloatField()
+  pictures = ListField(TextField())
+
+class Review(Document):
+  doc_type = 'review'
+  user_id = IntegerField()
+  text = TextField()
+  positive = BooleanField()
+  timestamp = DateTimeField()
     
